@@ -104,7 +104,7 @@ export const translations = {
     },
     contact: {
       title: "Contact",
-      info: "For opportunities and collaboration, reach me at baseltv11@gmail.com. Connect on LinkedIn.",
+      info: "For opportunities and collaboration, reach me at <a href=\"mailto:baseltv11@gmail.com\">baseltv11@gmail.com</a>. Connect on <a href=\"https://www.linkedin.com/in/basel-abu-sablih-547a5a290\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>.",
       form: {
         email: "Your email",
         subject: "Subject", 
@@ -235,7 +235,7 @@ export const translations = {
     },
     contact: {
       title: "Kontakt",
-      info: "For muligheter og samarbeid, kontakt meg på baseltv11@gmail.com. Koble til på LinkedIn.",
+      info: "For muligheter og samarbeid, kontakt meg på <a href=\"mailto:baseltv11@gmail.com\">baseltv11@gmail.com</a>. Koble til på <a href=\"https://www.linkedin.com/in/basel-abu-sablih-547a5a290\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>.",
       form: {
         email: "Din e-post",
         subject: "Emne",
@@ -325,6 +325,9 @@ function applyLanguage(lang) {
       element.placeholder = translation;
     } else if (element.tagName === 'TEXTAREA') {
       element.placeholder = translation;
+    } else if (element.getAttribute('data-translate') === 'contact.info') {
+      // Special handling for contact info to preserve HTML links
+      element.innerHTML = translation;
     } else {
       element.textContent = translation;
     }
@@ -343,7 +346,7 @@ function applyLanguage(lang) {
   // Update language toggle button
   const langToggle = document.getElementById('lang-toggle');
   if (langToggle) {
-    langToggle.textContent = lang === 'en' ? '🇳🇴' : '🇪🇳';
+    langToggle.textContent = lang === 'en' ? '🇳🇴' : '🇺🇸';
     langToggle.title = lang === 'en' ? 'Switch to Norwegian' : 'Switch to English';
   }
 }
