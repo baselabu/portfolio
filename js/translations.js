@@ -104,7 +104,7 @@ export const translations = {
     },
     contact: {
       title: "Contact",
-      info: "For opportunities and collaboration, reach me at <a href=\"mailto:baseltv11@gmail.com\">baseltv11@gmail.com</a>. Connect on <a href=\"https://www.linkedin.com/in/basel-abu-sablih-547a5a290\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>.",
+      info: "For opportunities and collaboration, reach me at <a href=\"mailto:baseltv11@gmail.com\">baseltv11@gmail.com</a>. Connect on <a href=\"https://www.linkedin.com/in/basel-abu-sablih-547a5a290\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> or check out my <a href=\"https://github.com/baselabu\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>.",
       form: {
         email: "Your email",
         subject: "Subject", 
@@ -235,7 +235,7 @@ export const translations = {
     },
     contact: {
       title: "Kontakt",
-      info: "For muligheter og samarbeid, kontakt meg på <a href=\"mailto:baseltv11@gmail.com\">baseltv11@gmail.com</a>. Koble til på <a href=\"https://www.linkedin.com/in/basel-abu-sablih-547a5a290\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>.",
+      info: "For muligheter og samarbeid, kontakt meg på <a href=\"mailto:baseltv11@gmail.com\">baseltv11@gmail.com</a>. Koble til på <a href=\"https://www.linkedin.com/in/basel-abu-sablih-547a5a290\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> eller sjekk ut min <a href=\"https://github.com/baselabu\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>.",
       form: {
         email: "Din e-post",
         subject: "Emne",
