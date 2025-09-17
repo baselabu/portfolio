@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basel Abu Sablih — Portfolio</title>
+    <meta name="description" content="Portfolio of Basel Abu Sablih, Computer Science." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home">Basel Abu Sablih</a>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="container">
+          <div class="hero-copy center">
+            <h1 class="mega-name">Basel Abu Sablih</h1>
+            <p class="lead">Computer Science — building reliable software with clean code and measurable impact.</p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn secondary" href="#contact">Contact Me</a>
+              <a class="btn secondary" href="Basel2026.pdf" download>Download CV</a>
+            </div>
+            <a class="scroll-cue" href="#about" aria-label="Scroll to About">↓</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            I’m studying a Bachelor in Computer Science at the University of Stavanger. Next year I plan to start a
+            Master’s in Data Science — I’m deeply interested in AI and how it makes our lives easier day by day.
+            I enjoy building reliable, user‑focused software with clean code and clear impact.
+          </p>
+          <div class="skills">
+            <span class="chip">Web development</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">.NET C#</span>
+            <span class="chip">Databases</span>
+            <span class="chip">Cybersecurity</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="container">
+          <h2>Education — University of Stavanger</h2>
+          <p class="section-sub">what i did in each semester</p>
+          <div id="edu-accordion" class="accordion"></div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="container">
+          <h2>Work Experience</h2>
+          <p class="section-sub">what i did in my work experience</p>
+          <div class="timeline-wrap">
+            <div id="timeline-progress" class="timeline-progress" aria-hidden="true"></div>
+            <div id="experience-list" class="timeline"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Projects</h2>
+          <p class="section-sub">Selected work with quick demos and source links.</p>
+          <div id="projects-grid" class="projects-grid"></div>
+        </div>
+      </section>
+
+      <section id="resume" class="section">
+        <div class="container">
+          <h2>Resume</h2>
+          <p class="section-sub">View or download my CV.</p>
+          <div class="resume-actions" style="margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn secondary" id="cv-toggle" type="button">View CV</button>
+            <a class="btn primary" href="Basel2026.pdf" download>Download CV (PDF)</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+          </div>
+          <div class="doc-embed hidden" id="cv-embed">
+            <object data="Basel2026.pdf" type="application/pdf" width="100%" height="100%">
+              <p>PDF preview unavailable. <a href="Basel2026.pdf" target="_blank" rel="noopener">Open the CV</a>.</p>
+            </object>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>For opportunities and collaboration, reach me at <a href="mailto:baseltv11@gmail.com">baseltv11@gmail.com</a>. Connect on <a href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <label>
+                Your email
+                <input type="email" id="cf-email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Subject
+                <input type="text" id="cf-subject" name="subject" placeholder="Topic" required />
+              </label>
+            </div>
+            <label class="form-full">
+              Message
+              <textarea id="cf-message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+            </label>
+            <div class="contact-actions">
+              <button type="submit" class="btn primary">Send</button>
+              <a class="btn secondary" href="#projects">See My Work</a>
+              <a class="btn secondary" href="Basel2026.pdf" download>Download CV</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Basel Abu Sablih. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- CV Modal -->
+    <div class="modal-overlay hidden" id="cv-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="CV Preview">
+      <div class="modal-dialog" role="document">
+        <div class="modal-header">
+          <h3 class="modal-title">CV</h3>
+          <button class="modal-close" id="cv-close" aria-label="Close CV">✕</button>
+        </div>
+        <div class="modal-body">
+          <object data="Basel2026.pdf" type="application/pdf" width="100%" height="100%">
+            <p>PDF preview unavailable. <a href="Basel2026.pdf" target="_blank" rel="noopener">Open the CV</a>.</p>
+          </object>
+        </div>
+        <div class="modal-footer">
+          <a class="btn primary" href="Basel2026.pdf" download>Download PDF</a>
+          <a class="btn secondary" href="Basel2026.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="theme-top" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">🌙</button>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
