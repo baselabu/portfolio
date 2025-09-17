@@ -19,8 +19,8 @@
 }
 
 .modal-dialog {
-  width: min(1100px, 96vw);
-  height: min(85vh, 900px);
+  width: min(1200px, 98vw);
+  height: min(95vh, 1000px);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -68,12 +68,52 @@
 
 .modal-body { 
   flex: 1; 
+  overflow: hidden;
+  position: relative;
 }
 
 .modal-body object { 
   width: 100%; 
   height: 100%; 
   display: block; 
+  border: none;
+  min-height: 100%;
+}
+
+/* Hide PDF title/header that might appear */
+.modal-body object::before,
+.modal-body object::after {
+  display: none !important;
+}
+
+/* Hide any PDF viewer UI elements */
+.modal-body object[type="application/pdf"] {
+  position: relative;
+}
+
+.modal-body object[type="application/pdf"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--surface);
+  z-index: 10;
+  display: none;
+}
+
+/* Mobile responsive modal */
+@media (max-width: 768px) {
+  .modal-dialog {
+    width: 98vw;
+    height: 95vh;
+    margin: 0;
+  }
+  
+  .modal-overlay {
+    padding: 8px;
+  }
 }
 
 /* PDF embed fallback */

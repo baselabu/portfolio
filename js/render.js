@@ -1,7 +1,8 @@
 import { experiences, projects } from './data.js';
+import { getTranslation } from './translations.js';
 
 // Render experiences in reverse chronological order assuming newest first in array
-export function renderExperiences(items) {
+export function renderExperiences(items, lang = 'en') {
   const container = document.getElementById("experience-list");
   if (!container) return;
   container.innerHTML = "";
@@ -27,7 +28,7 @@ export function renderExperiences(items) {
   });
 }
 
-export function renderProjects(items) {
+export function renderProjects(items, lang = 'en') {
   const grid = document.getElementById("projects-grid");
   if (!grid) return;
   grid.innerHTML = "";

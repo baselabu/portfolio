@@ -1,40 +1,40 @@
 // Data: update these arrays with your real information
 export const experiences = [
   {
-    role: "Butikkmedarbeider",
+    role: "Store Associate",
     company: "MENY (Kuben), Hønefoss",
-    period: "Nov. 2022 – Nåværende",
+    period: "Nov. 2022 – Present",
     bullets: [
-      "Daglig kundeservice og kassearbeid med høy trafikk.",
-      "Ansvar for varepåfylling og ryddig butikklayout.",
-      "Håndterer ulike kundebehov og produkttyper effektivt.",
+      "Daily customer service and cashier work with high traffic.",
+      "Responsible for product restocking and maintaining clean store layout.",
+      "Efficiently handle various customer needs and product types.",
     ],
   },
   {
-    role: "Vakt",
+    role: "Security Guard",
     company: "Kistefoss, Jevnaker",
-    period: "Mai 2024 – Sep. 2024",
+    period: "May 2024 – Sep. 2024",
     bullets: [
-      "Bidro til sikker og ryddig gjennomføring av arrangementer.",
-      "Kommuniserte tydelig med besøkende og team ved behov.",
+      "Contributed to safe and organized execution of events.",
+      "Communicated clearly with visitors and team as needed.",
     ],
   },
   {
-    role: "Turistvert",
+    role: "Tourist Guide",
     company: "Glassverket, Jevnaker",
-    period: "Juli 2022 – Aug. 2022",
+    period: "July 2022 – Aug. 2022",
     bullets: [
-      "Veiledet og informerte turister om attraksjoner og aktiviteter.",
-      "Sørget for gode opplevelser på ulike stasjoner.",
+      "Guided and informed tourists about attractions and activities.",
+      "Ensured good experiences at various stations.",
     ],
   },
   {
-    role: "SFO‑assistent",
-    company: "Toso skole, Jevnaker",
-    period: "Juni 2021 – Juli 2022",
+    role: "After School Care Assistant",
+    company: "Toso School, Jevnaker",
+    period: "June 2021 – July 2022",
     bullets: [
-      "Tilsyn og aktiviteter for barn i SFO.",
-      "La til rette for trygge og gode relasjoner i hverdagen.",
+      "Supervision and activities for children in after school care.",
+      "Facilitated safe and good relationships in daily life.",
     ],
   },
 ];

@@ -44,15 +44,3 @@ export function setupScrollReveal() {
   toReveal.forEach((el) => observer.observe(el));
 }
 
-// Hide header at very top for clean hero face
-export function setupTopHeaderHide() {
-  function update() {
-    if (window.scrollY <= 2) {
-      document.body.classList.add('at-top');
-    } else {
-      document.body.classList.remove('at-top');
-    }
-  }
-  window.addEventListener('scroll', update, { passive: true });
-  update();
-}
