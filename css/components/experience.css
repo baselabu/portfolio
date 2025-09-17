@@ -1,0 +1,68 @@
+/* Experience Timeline */
+.timeline-wrap { position: relative; }
+
+.timeline-progress {
+  display: none;
+}
+
+.timeline { 
+  display: grid; 
+  gap: 18px; 
+  width: min(760px, 92vw); 
+  margin: 0 auto; 
+}
+
+.timeline-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  transition: transform .2s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+  position: relative;
+}
+
+.timeline-item header { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 8px; 
+}
+
+.role { font-weight: 700; }
+.period { color: var(--text-dim); }
+.bullets { 
+  margin: 10px 0 0; 
+  padding-left: 18px; 
+  color: var(--text-dim); 
+}
+
+.timeline-item:hover { 
+  transform: translateY(-4px); 
+  border-color: rgba(94,234,212,0.35); 
+  box-shadow: var(--shadow); 
+}
+
+/* Timeline markers */
+.timeline-item::before {
+  display: none;
+}
+
+/* Centered stacked experience */
+.timeline .timeline-item { width: 100%; }
+.timeline .timeline-item:nth-child(odd),
+.timeline .timeline-item:nth-child(even) { 
+  justify-self: center; 
+  margin: 0; 
+}
+
+.timeline .timeline-item .date-badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 8px;
+  background: var(--muted-surface);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}

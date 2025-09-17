@@ -1,0 +1,62 @@
+/* Education Tree */
+.edu-tree { position: relative; padding: 24px 0; }
+
+.tree-trunk { 
+  position: absolute; 
+  left: 50%; 
+  top: 0; 
+  bottom: 0; 
+  width: 4px; 
+  transform: translateX(-50%); 
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)); 
+  border-radius: 3px; 
+  opacity: 0.7; 
+}
+
+.tree-leaf { 
+  position: relative; 
+  width: min(520px, 92vw); 
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  border-radius: 14px; 
+  padding: 12px; 
+  box-shadow: var(--shadow); 
+}
+
+.edu-tree .tree-leaf { margin: 0 auto 14px; }
+.edu-tree .tree-leaf:nth-child(odd) { margin-left: calc(50% + 24px); }
+.edu-tree .tree-leaf:nth-child(even) { margin-right: calc(50% + 24px); }
+
+.leaf-title { font-weight: 700; margin-bottom: 6px; }
+.leaf-courses { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 6px; 
+}
+
+.leaf-courses li { 
+  display: flex; 
+  justify-content: space-between; 
+  gap: 8px; 
+  color: var(--text-dim); 
+}
+
+.course-name { color: var(--text); }
+.course-code { 
+  background: var(--muted-surface); 
+  border: 1px solid var(--border); 
+  border-radius: 8px; 
+  padding: 2px 6px; 
+  font-size: 11px; 
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .edu-tree .tree-leaf:nth-child(odd), 
+  .edu-tree .tree-leaf:nth-child(even) { 
+    margin: 0 auto 14px; 
+  }
+}

@@ -1,0 +1,137 @@
+/* CSS Variables and Base Styles */
+:root {
+  --bg: #0b0c10;
+  --surface: #111218;
+  --muted-surface: #171922;
+  --text: #e6e8ee;
+  --text-dim: #aeb3c2;
+  --accent: #5eead4;
+  --accent-2: #60a5fa;
+  --border: #232635;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+[data-theme="light"] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --muted-surface: #eef1f7;
+  --text: #0b1220;
+  --text-dim: #374151;
+  --accent: #0ea5e9;
+  --accent-2: #22c55e;
+  --border: #dde2ec;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Reset and Base */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, var(--bg) 0%, #0d0f15 100%);
+  color: var(--text);
+}
+
+[data-theme="light"] body {
+  background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+}
+
+/* Container */
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+/* Section spacing */
+.section { padding: 72px 0; }
+
+/* Typography */
+h2 { font-size: 28px; margin: 0 0 8px; }
+.section-sub { margin: 0 0 24px; color: var(--text-dim); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .12s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  border: 1px solid var(--border);
+}
+.btn.primary { background: var(--accent); color: #0b0c10; border-color: transparent; }
+.btn.primary:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn.secondary { background: var(--muted-surface); color: var(--text); }
+.btn.secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+/* Background animations */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -30vmax;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(94,234,212,0.15), transparent 70%) 10% 20% / 60vmax 60vmax no-repeat,
+              radial-gradient(closest-side, rgba(96,165,250,0.12), transparent 70%) 90% 30% / 55vmax 55vmax no-repeat,
+              radial-gradient(closest-side, rgba(255,255,255,0.06), transparent 70%) 50% 80% / 70vmax 70vmax no-repeat;
+  filter: blur(30px);
+  animation: drift 40s linear infinite;
+}
+
+[data-theme="light"] body::before {
+  background: radial-gradient(closest-side, rgba(14,165,233,0.12), transparent 70%) 12% 18% / 60vmax 60vmax no-repeat,
+              radial-gradient(closest-side, rgba(34,197,94,0.10), transparent 70%) 88% 25% / 55vmax 55vmax no-repeat,
+              radial-gradient(closest-side, rgba(0,0,0,0.04), transparent 70%) 50% 80% / 70vmax 70vmax no-repeat;
+}
+
+/* Network overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(94,234,212,0.08) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(96,165,250,0.06) 1px, transparent 1px),
+    radial-gradient(circle at 40% 70%, rgba(94,234,212,0.05) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(96,165,250,0.07) 1px, transparent 1px),
+    radial-gradient(circle at 10% 90%, rgba(94,234,212,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 60% 10%, rgba(96,165,250,0.05) 1px, transparent 1px);
+  background-size: 200px 200px, 180px 180px, 220px 220px, 160px 160px, 240px 240px, 200px 200px;
+  animation: networkFloat 25s linear infinite;
+  opacity: 0.6;
+}
+
+[data-theme="light"] body::after {
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(14,165,233,0.06) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(34,197,94,0.05) 1px, transparent 1px),
+    radial-gradient(circle at 40% 70%, rgba(14,165,233,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(34,197,94,0.05) 1px, transparent 1px),
+    radial-gradient(circle at 10% 90%, rgba(14,165,233,0.03) 1px, transparent 1px),
+    radial-gradient(circle at 60% 10%, rgba(34,197,94,0.04) 1px, transparent 1px);
+}
+
+/* Animations */
+@keyframes drift {
+  0%   { background-position: 10% 20%, 90% 30%, 50% 80%; }
+  50%  { background-position: 15% 25%, 85% 35%, 52% 78%; }
+  100% { background-position: 10% 20%, 90% 30%, 50% 80%; }
+}
+
+@keyframes networkFloat {
+  0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+  25%  { background-position: 25% 25%, 15% 35%, 35% 15%, 45% 45%, 5% 55%, 55% 5%; }
+  50%  { background-position: 50% 50%, 30% 70%, 70% 30%, 90% 90%, 10% 90%, 90% 10%; }
+  75%  { background-position: 75% 25%, 55% 45%, 85% 15%, 65% 65%, 25% 75%, 75% 25%; }
+  100% { background-position: 100% 0%, 80% 20%, 100% 40%, 80% 80%, 40% 100%, 100% 40%; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .project-card:hover, .timeline-item:hover, .btn.primary:hover, .btn.secondary:hover { transform: none !important; box-shadow: none !important; }
+}
