@@ -19,8 +19,8 @@
 }
 
 .modal-dialog {
-  width: min(1200px, 98vw);
-  height: min(95vh, 1000px);
+  width: min(1000px, 95vw);
+  height: min(90vh, 800px);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;

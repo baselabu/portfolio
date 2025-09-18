@@ -36,17 +36,17 @@ export const education = [
     badges: ["Systems"],
     courses: [
       { code: "ELE130", name: "Kommunikasjonsteknologi 1" },
-      { code: "DAT240", name: "Programvareutvikling" },
       { code: "STA100", name: "Sannsynlighetsregning og statistikk 1" },
     ],
   },
   {
     title: "Third year— Semester 5",
-    badges: ["AI", "Model"],
+    badges: ["AI", "Model", "Software Engineering"],
     courses: [
       { code: "DAT105", name: "AI Essentials for Everyone" },
       { code: "DAT305", name: "AI for Engineers" },
       { code: "MOD300", name: "Teknisk modellering" },
+      { code: "DAT240", name: "Programvareutvikling" },
     ],
   },
   {
