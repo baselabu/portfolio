@@ -102,6 +102,10 @@
 
 /* Mobile nav */
 @media (max-width: 640px) {
+  .header-inner {
+    position: relative;
+  }
+  
   .nav-toggle { 
     display: inline-block; 
     background: none; 
@@ -110,6 +114,7 @@
     padding: 6px 10px; 
     border-radius: 10px; 
   }
+  
   .nav-list { 
     display: none; 
     position: absolute; 
@@ -124,6 +129,20 @@
     box-shadow: var(--shadow); 
   }
   .nav-list.open { display: flex; }
-  .theme-top { right: 12px; top: 60px; padding: 6px 8px; }
-  .lang-toggle { right: 12px; top: 100px; padding: 6px 8px; }
+  
+  .theme-top { 
+    position: absolute;
+    right: 60px; 
+    top: 14px; 
+    padding: 6px 8px; 
+    margin: 0;
+  }
+  
+  .lang-toggle { 
+    position: absolute;
+    right: 100px; 
+    top: 14px; 
+    padding: 6px 8px; 
+    margin: 0;
+  }
 }
