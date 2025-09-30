@@ -81,24 +81,6 @@
 
 .theme-top:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
 
-/* Language toggle */
-.lang-toggle {
-  position: fixed;
-  right: 16px;
-  top: 110px;
-  z-index: 20;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 8px 10px;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform .15s ease, box-shadow .25s ease, background .25s ease;
-  font-size: 16px;
-}
-
-.lang-toggle:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
 
 /* Mobile nav */
 @media (max-width: 640px) {
@@ -131,18 +113,12 @@
   .nav-list.open { display: flex; }
   
   .theme-top { 
-    position: absolute;
+    position: fixed;
     right: 60px; 
     top: 14px; 
     padding: 6px 8px; 
     margin: 0;
+    z-index: 25;
   }
   
-  .lang-toggle { 
-    position: absolute;
-    right: 100px; 
-    top: 14px; 
-    padding: 6px 8px; 
-    margin: 0;
-  }
 }

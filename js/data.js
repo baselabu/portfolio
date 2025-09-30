@@ -42,16 +42,20 @@ export const experiences = [
 export const projects = [
   {
     name: "Calculator",
-    description: "Simple calculator built during learning process (C# console).",
-    tags: ["C#"],
-    demoUrl: "https://github.com/baselabu/Small-projects/tree/main/Calculator",
+    description: "Simple calculator built during learning process.",
+    tags: ["C#","Console"],
     githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Calculator",
   },
   {
     name: "Guessing Number Game",
-    description: "Console number guessing game (C#).",
-    tags: ["C#"],
-    demoUrl: "https://github.com/baselabu/Small-projects/tree/main/GuessingNumber",
+    description: "Console number guessing game built during learning process.",
+    tags: ["C#","Console"],
     githubUrl: "https://github.com/baselabu/Small-projects/tree/main/GuessingNumber",
+  },
+  {
+    name: "Shape Area Calculator",
+    description: "Console application that calculates the area of various geometric shapes with comprehensive input validation.",
+    tags: ["C#","Console"],
+    githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Shape%20of%20Area/Shape%20of%20Area",
   },
 ];

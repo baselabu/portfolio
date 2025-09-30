@@ -42,6 +42,10 @@
   margin-bottom: 10px; 
 }
 
+.form-row:last-of-type {
+  grid-template-columns: 1fr;
+}
+
 .form-full { display: block; margin-bottom: 10px; }
 
 .contact-form label { 
@@ -91,6 +95,45 @@
 .chip:hover { 
   transform: translateY(-2px); 
   box-shadow: var(--shadow); 
+}
+
+/* Form message styling */
+.form-message {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.form-message.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.form-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Button loading state */
+.btn-loading {
+  display: none;
+}
+
+.btn.loading .btn-text {
+  display: none;
+}
+
+.btn.loading .btn-loading {
+  display: inline;
+}
+
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 /* Mobile responsive */

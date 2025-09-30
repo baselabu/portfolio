@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Basel Abu Sablih — Portfolio</title>
     <meta name="description" content="Portfolio of Basel Abu Sablih, Computer Science." />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -29,13 +29,13 @@
         <nav class="nav" aria-label="Primary">
           <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
           <ul class="nav-list">
-            <li><a href="#about" data-translate="nav.about">About</a></li>
-            <li><a href="#experience" data-translate="nav.experience">Work Experience</a></li>
-            <li><a href="#projects" data-translate="nav.projects">Projects</a></li>
-            <li><a href="#resume" data-translate="nav.resume">Resume</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
             <li><a href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://github.com/baselabu" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -46,21 +46,21 @@
         <div class="container">
           <div class="hero-copy center">
             <h1 class="mega-name">Basel Abu Sablih</h1>
-            <p class="lead" data-translate="hero.subtitle">Computer Science — building reliable software with clean code and measurable impact.</p>
+            <p class="lead">Computer Science — building reliable software with clean code and measurable impact.</p>
             <div class="hero-cta">
-              <a class="btn primary" href="#projects" data-translate="hero.viewProjects">View Projects</a>
-              <a class="btn secondary" href="#contact" data-translate="hero.contactMe">Contact Me</a>
-              <a class="btn secondary" href="Basel Work CV.pdf" download data-translate="hero.downloadCV">Download CV</a>
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn secondary" href="#contact">Contact Me</a>
+              <button class="btn secondary" id="hero-cv-toggle" type="button">View CV</button>
             </div>
-            <a class="scroll-cue" href="#about" aria-label="Scroll to About" data-translate="hero.scrollDown">↓</a>
+            <a class="scroll-cue" href="#about" aria-label="Scroll to About">↓</a>
           </div>
         </div>
       </section>
 
       <section id="about" class="section">
         <div class="container">
-          <h2 data-translate="about.title">About</h2>
-          <p data-translate="about.description">
+          <h2>About</h2>
+          <p>
             I'm studying a Bachelor degree in Computer Science at the University of Stavanger (UiS). Next year I plan to start my
             Master's degree in Data Science — I'm interested in AI and how it makes our lives easier day by day.
             I enjoy building reliable software with clean code and clear impact.
@@ -80,16 +80,16 @@
 
       <section id="education" class="section">
         <div class="container">
-          <h2 data-translate="education.title">Education — University of Stavanger</h2>
-          <p class="section-sub" data-translate="education.subtitle">what i did in each semester</p>
+          <h2>Education — University of Stavanger</h2>
+          <p class="section-sub">what i did in each semester</p>
           <div id="edu-accordion" class="accordion"></div>
         </div>
       </section>
 
       <section id="experience" class="section">
         <div class="container">
-          <h2 data-translate="experience.title">Work Experience</h2>
-          <p class="section-sub" data-translate="experience.subtitle">what i did in my work experience</p>
+          <h2>Work Experience</h2>
+          <p class="section-sub">what i did in my work experience</p>
           <div class="timeline-wrap">
             <div id="timeline-progress" class="timeline-progress" aria-hidden="true"></div>
             <div id="experience-list" class="timeline"></div>
@@ -99,53 +99,63 @@
 
       <section id="projects" class="section">
         <div class="container">
-          <h2 data-translate="projects.title">Projects</h2>
-          <p class="section-sub" data-translate="projects.subtitle">Selected work with quick demos and source links.</p>
+          <h2>Projects</h2>
+          <p class="section-sub">Selected work with source code available on GitHub. Some projects include live demos.</p>
           <div id="projects-grid" class="projects-grid"></div>
         </div>
       </section>
 
       <section id="resume" class="section">
         <div class="container">
-          <h2 data-translate="resume.title">Resume</h2>
-          <p class="section-sub" data-translate="resume.subtitle">View or download my CV.</p>
+          <h2>Resume</h2>
+          <p class="section-sub">View or download my CV.</p>
           <div class="resume-actions" style="margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn secondary" id="cv-toggle" type="button" data-translate="resume.view">View CV</button>
-            <a class="btn primary" href="Basel Work CV.pdf" download data-translate="resume.download">Download CV (PDF)</a>
+            <button class="btn secondary" id="cv-toggle" type="button">View CV</button>
+            <a class="btn primary" href="documents/Basel Work CV.pdf" download>Download CV (PDF)</a>
             <a class="btn secondary" href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
           </div>
           <div class="doc-embed hidden" id="cv-embed">
-            <object data="Basel Work CV.pdf" type="application/pdf" width="100%" height="100%">
-              <p>PDF preview unavailable. <a href="Basel Work CV.pdf" target="_blank" rel="noopener">Open the CV</a>.</p>
-            </object>
+            <iframe src="documents/Basel Work CV.pdf" width="100%" height="100%" style="border: none;">
+              <p>PDF preview unavailable. <a href="documents/Basel Work CV.pdf" target="_blank" rel="noopener">Open the CV</a>.</p>
+            </iframe>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section contact-section">
         <div class="container">
-          <h2 data-translate="contact.title">Contact</h2>
-          <p data-translate="contact.info">For opportunities and collaboration, reach me at <a href="mailto:baseltv11@gmail.com">baseltv11@gmail.com</a>. Connect on <a href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">LinkedIn</a> or check out my <a href="https://github.com/baselabu" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+          <h2>Contact</h2>
+          <p>For opportunities and collaboration, reach me at <a href="mailto:baseltv11@gmail.com">baseltv11@gmail.com</a>. Connect on <a href="https://www.linkedin.com/in/basel-abu-sablih-547a5a290" target="_blank" rel="noopener noreferrer">LinkedIn</a> or check out my <a href="https://github.com/baselabu" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
           <form id="contact-form" class="contact-form">
             <div class="form-row">
               <label>
-                <span data-translate="contact.form.email">Your email</span>
-                <input type="email" id="cf-email" name="email" data-translate-placeholder="contact.form.emailPlaceholder" placeholder="you@example.com" required />
+                <span>Your name</span>
+                <input type="text" id="cf-name" name="name" placeholder="Enter your name" required />
               </label>
               <label>
-                <span data-translate="contact.form.subject">Subject</span>
-                <input type="text" id="cf-subject" name="subject" data-translate-placeholder="contact.form.subjectPlaceholder" placeholder="Topic" required />
+                <span>Your email</span>
+                <input type="email" id="cf-email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span>Subject</span>
+                <input type="text" id="cf-subject" name="subject" placeholder="Topic" required />
               </label>
             </div>
             <label class="form-full">
-              <span data-translate="contact.form.message">Message</span>
-              <textarea id="cf-message" name="message" rows="6" data-translate-placeholder="contact.form.messagePlaceholder" placeholder="Write your message..." required></textarea>
+              <span>Message</span>
+              <textarea id="cf-message" name="message" rows="6" placeholder="Write your message..." required></textarea>
             </label>
             <div class="contact-actions">
-              <button type="submit" class="btn primary" data-translate="contact.form.send">Send</button>
-              <a class="btn secondary" href="#projects" data-translate="contact.form.seeWork">See My Work</a>
-              <a class="btn secondary" href="Basel Work CV.pdf" download data-translate="contact.form.downloadCV">Download CV</a>
+              <button type="submit" class="btn primary" id="send-btn">
+                <span class="btn-text">Send</span>
+                <span class="btn-loading hidden">Sending...</span>
+              </button>
+              <a class="btn secondary" href="#projects">See My Work</a>
+              <a class="btn secondary" href="documents/Basel Work CV.pdf" download>Download CV</a>
             </div>
+            <div id="form-message" class="form-message hidden"></div>
           </form>
         </div>
       </section>
@@ -153,7 +163,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p data-translate="footer.copyright">© <span id="year"></span> Basel Abu Sablih. All rights reserved.</p>
+        <p>© <span id="year"></span> Basel Abu Sablih. All rights reserved.</p>
       </div>
     </footer>
 
@@ -161,23 +171,22 @@
     <div class="modal-overlay hidden" id="cv-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="CV Preview">
       <div class="modal-dialog" role="document">
         <div class="modal-header">
-          <h3 class="modal-title" data-translate="resume.title">CV</h3>
+          <h3 class="modal-title">CV</h3>
           <button class="modal-close" id="cv-close" aria-label="Close CV">✕</button>
         </div>
         <div class="modal-body">
-          <object data="Basel Work CV.pdf#navpanes=0&scrollbar=0&statusbar=0&messages=0&zoom=100" type="application/pdf" width="100%" height="100%">
-            <p>PDF preview unavailable. <a href="Basel Work CV.pdf" target="_blank" rel="noopener">Open the CV</a>.</p>
-          </object>
+          <iframe src="documents/Basel Work CV.pdf" width="100%" height="100%" style="border: none;">
+            <p>PDF preview unavailable. <a href="documents/Basel Work CV.pdf" target="_blank" rel="noopener">Open the CV</a>.</p>
+          </iframe>
         </div>
         <div class="modal-footer">
-          <a class="btn primary" href="Basel Work CV.pdf" download data-translate="modal.download">Download PDF</a>
-          <a class="btn secondary" href="Basel Work CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn primary" href="documents/Basel Work CV.pdf" download>Download PDF</a>
+          <a class="btn secondary" href="documents/Basel Work CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
         </div>
       </div>
     </div>
 
     <button class="theme-top" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">⏾</button>
-    <button class="lang-toggle" id="lang-toggle" title="Switch to Norwegian" aria-label="Switch language">🇳🇴</button>
 
     <script type="module" src="script.js"></script>
   </body>

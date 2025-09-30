@@ -5,15 +5,13 @@ import { setupScrollReveal } from './js/animations.js';
 import { setupTheme } from './js/theme.js';
 import { setupContactForm, setupCvModal } from './js/contact.js';
 import { renderEducationTree } from './js/education.js';
-import { setupTranslation } from './js/translations.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Make render functions globally available for translation system
-  window.renderExperiences = renderExperiences;
-  window.renderProjects = renderProjects;
-  window.renderEducationTree = renderEducationTree;
+  console.log('DOM loaded, starting initialization');
+  console.log('Experiences data:', experiences);
+  console.log('Projects data:', projects);
   
-  // Initial render with English data
+  // Initial render
   renderExperiences(experiences);
   renderProjects(projects);
   setupNavToggle();
@@ -24,5 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderEducationTree();
   setupContactForm();
   setupCvModal();
-  setupTranslation();
+  
+  console.log('All initialization complete');
 });
