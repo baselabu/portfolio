@@ -1,16 +1,37 @@
 /* Education Tree */
 .edu-tree { position: relative; padding: 24px 0; }
+.edu-tree.hidden { display: none !important; }
+
+/* Education Tree Animation */
+.tree-leaf {
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tree-leaf.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 
 .tree-trunk { 
   position: absolute; 
   left: 50%; 
-  top: 0; 
-  bottom: 0; 
+  top: 80px; /* Start after the top close button */
+  bottom: 80px; /* End before the bottom close button */
   width: 4px; 
-  transform: translateX(-50%); 
+  transform: translateX(-50%) scaleY(0); 
   background: linear-gradient(180deg, var(--accent), var(--accent-2)); 
   border-radius: 3px; 
-  opacity: 0.7; 
+  opacity: 0;
+  transform-origin: top;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tree-trunk.animate-in {
+  opacity: 0.7;
+  transform: translateX(-50%) scaleY(1);
 }
 
 .tree-leaf { 
@@ -51,6 +72,59 @@
   border-radius: 8px; 
   padding: 2px 6px; 
   font-size: 11px; 
+}
+
+/* Education Close Button */
+.education-close {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  margin-bottom: 1rem;
+  width: fit-content;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When positioned at the end of content */
+.education-close:last-child {
+  margin-top: 2rem;
+  margin-bottom: 1;
+  position: relative;
+}
+
+/* Remove the connecting line - not needed since tree line ends at button */
+
+.education-close.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.8);
+}
+
+.education-close.fade-in {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.education-close .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: #dc2626;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.education-close .btn:hover {
+  transform: translateY(-1px);
+  background: #ef4444;
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.3);
 }
 
 /* Mobile responsive */

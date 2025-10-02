@@ -39,7 +39,18 @@ export const experiences = [
   },
 ];
 
+// Main featured projects
 export const projects = [
+  {
+    name: "Books Library",
+    description: "A comprehensive ASP.NET Razor Pages web application for managing a book library with CRUD operations, user authentication, and modern web interface.",
+    tags: ["ASP.NET Core", "Razor Pages", "C#", "Entity Framework Core", "HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/baselabu/BookLibrary",
+  },
+];
+
+// Small learning projects with snake animation
+export const smallProjects = [
   {
     name: "Calculator",
     description: "Simple calculator built during learning process.",

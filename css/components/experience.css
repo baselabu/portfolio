@@ -1,5 +1,20 @@
 /* Experience Timeline */
-.timeline-wrap { position: relative; }
+.timeline-wrap { 
+  position: relative; 
+  padding: 24px 0;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  max-height: 2000px;
+  overflow: visible;
+  transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
+}
+.timeline-wrap.hidden { 
+  opacity: 0;
+  transform: translateY(-20px) scale(0.95);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
+}
 
 .timeline-progress {
   display: none;
@@ -45,6 +60,59 @@
 /* Timeline markers */
 .timeline-item::before {
   display: none;
+}
+
+/* Experience Close Button */
+.experience-close {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  margin-bottom: 1rem;
+  width: fit-content;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When positioned at the end of content */
+.experience-close:last-child {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* Remove the connecting line - not needed since timeline ends at button */
+
+.experience-close.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.8);
+}
+
+.experience-close.fade-in {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.experience-close .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: #dc2626;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.experience-close .btn:hover {
+  transform: translateY(-1px);
+  background: #b91c1c;
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.3);
 }
 
 /* Centered stacked experience */

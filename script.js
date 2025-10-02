@@ -1,10 +1,10 @@
 // Main entry point - imports and initializes all modules
-import { experiences, projects } from './js/data.js';
-import { renderExperiences, renderProjects, setupNavToggle, setYear, setupTimelineProgress } from './js/render.js';
+import { experiences, projects, smallProjects } from './js/data.js';
+import { renderExperiences, renderProjects, setupNavToggle, setYear, setupTimelineProgress, renderSmallProjects, setupSmallProjectsAnimation, renderExperienceTimeline, setupExperienceAnimation } from './js/render.js';
 import { setupScrollReveal } from './js/animations.js';
 import { setupTheme } from './js/theme.js';
 import { setupContactForm, setupCvModal } from './js/contact.js';
-import { renderEducationTree } from './js/education.js';
+import { renderEducationTree, setupEducationAnimation } from './js/education.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log('DOM loaded, starting initialization');
@@ -12,16 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log('Projects data:', projects);
   
   // Initial render
-  renderExperiences(experiences);
   renderProjects(projects);
   setupNavToggle();
   setYear();
   setupScrollReveal();
   setupTimelineProgress();
+  setupSmallProjectsAnimation();
   setupTheme();
   renderEducationTree();
+  setupEducationAnimation();
+  renderExperienceTimeline(experiences);
+  setupExperienceAnimation();
   setupContactForm();
   setupCvModal();
+  
+  // Render small projects after main projects are set up
+  setTimeout(() => {
+    renderSmallProjects(smallProjects);
+  }, 100);
   
   console.log('All initialization complete');
 });

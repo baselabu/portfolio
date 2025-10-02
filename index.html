@@ -81,18 +81,28 @@
       <section id="education" class="section">
         <div class="container">
           <h2>Education — University of Stavanger</h2>
-          <p class="section-sub">what i did in each semester</p>
-          <div id="edu-accordion" class="accordion"></div>
+          <p class="section-sub">Bachelor in Computer Science</p>
+          <div class="education-container">
+            <button class="education-trigger" id="education-trigger">
+              View My Academic Journey
+            </button>
+            <div id="edu-accordion" class="accordion hidden"></div>
+          </div>
         </div>
       </section>
 
       <section id="experience" class="section">
         <div class="container">
           <h2>Work Experience</h2>
-          <p class="section-sub">what i did in my work experience</p>
-          <div class="timeline-wrap">
-            <div id="timeline-progress" class="timeline-progress" aria-hidden="true"></div>
-            <div id="experience-list" class="timeline"></div>
+          <p class="section-sub">Professional work history</p>
+          <div class="experience-container">
+            <button class="experience-trigger" id="experience-trigger">
+              View My Work Experience
+            </button>
+            <div class="timeline-wrap hidden" id="experience-timeline">
+              <div id="timeline-progress" class="timeline-progress" aria-hidden="true"></div>
+              <div id="experience-list" class="timeline"></div>
+            </div>
           </div>
         </div>
       </section>
