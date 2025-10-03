@@ -67,6 +67,6 @@ export const smallProjects = [
     name: "Shape Area Calculator",
     description: "Console application that calculates the area of various geometric shapes with comprehensive input validation.",
     tags: ["C#","Console"],
-    githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Shape%20of%20Area/Shape%20of%20Area",
+    githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Shape%20of%20Area",
   },
 ];
