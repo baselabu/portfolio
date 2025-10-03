@@ -124,11 +124,11 @@
 }
 
 .btn.loading .btn-text {
-  display: none;
+  display: none !important;
 }
 
 .btn.loading .btn-loading {
-  display: inline;
+  display: inline !important;
 }
 
 .btn.loading {

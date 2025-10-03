@@ -26,28 +26,37 @@
 
 /* Small Projects Expandable Box */
 .small-projects-trigger {
-  background: linear-gradient(135deg, #22c55e, #16a34a); /* GitHub green but less bright */
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); /* Theme-aware colors like GitHub buttons */
   border: none;
   border-radius: 12px;
   padding: 2rem;
   cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Separate transitions for theme changes */
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease; /* Smooth theme transitions like other buttons */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  color: #ffffff;
+  color: #0b0c10;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3); /* Matching shadow */
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 30%, transparent);
   position: relative;
   overflow: hidden;
 }
 
-/* Light mode adjustments */
+/* Light mode adjustments - using CSS variables for smooth theme transitions */
 [data-theme="light"] .small-projects-trigger {
-  background: linear-gradient(135deg, #22c55e, #16a34a) !important; /* Same green for consistency */
-  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3) !important; /* Same shadow */
+  color: #ffffff; /* White text for better contrast on light blue background */
+}
+
+[data-theme="light"] .education-trigger {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #ffffff; /* White text for better contrast on light blue background */
+}
+
+[data-theme="light"] .experience-trigger {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #ffffff; /* White text for better contrast on light blue background */
 }
 
 .small-projects-trigger::before {
@@ -67,13 +76,10 @@
 
 .small-projects-trigger:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
-/* Light mode hover */
-[data-theme="light"] .small-projects-trigger:hover {
-  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4) !important;
-}
+/* Light mode hover - no additional rules needed, CSS variables handle the transition */
 
 .small-projects-trigger .plus-icon {
   font-size: 4rem;
@@ -90,7 +96,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 0.5rem 0;
-  color: #ffffff;
+  color: inherit; /* Inherits from parent, will be overridden by light mode rule */
 }
 
 .small-projects-trigger p {
@@ -98,7 +104,7 @@
   opacity: 1;
   margin: 0;
   text-align: center;
-  color: #ffffff;
+  color: inherit; /* Inherits from parent, will be overridden by light mode rule */
   font-weight: 500;
 }
 
@@ -251,6 +257,7 @@
   grid-column: 1 / -1;
   display: flex;
   justify-content: flex-start;
+  padding-left: 1rem; /* Move button slightly to the right */
 }
 
 .small-projects-close .btn {
@@ -285,7 +292,7 @@
   border-radius: 8px;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease; /* Smooth theme transitions like other buttons */
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -338,7 +345,7 @@
   border-radius: 8px;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease; /* Smooth theme transitions like other buttons */
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;

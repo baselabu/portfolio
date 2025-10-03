@@ -44,7 +44,7 @@ export const projects = [
   {
     name: "Books Library",
     description: "A comprehensive ASP.NET Razor Pages web application for managing a book library with CRUD operations, user authentication, and modern web interface.",
-    tags: ["ASP.NET Core", "Razor Pages", "C#", "Entity Framework Core", "HTML", "CSS", "JavaScript"],
+    tags: ["ASP.NET Core", "Razor Pages", "C#", "Entity Framework Core","SQLite", "HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/baselabu/BookLibrary",
   },
 ];
