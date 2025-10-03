@@ -52,10 +52,10 @@ export const projects = [
 // Small learning projects with snake animation
 export const smallProjects = [
   {
-    name: "Calculator",
-    description: "Simple calculator built during learning process.",
+    name: "Currency&Temperature Converter",
+    description: "Console Currency&Temperature Converter that converts between different currencies and temperatures.",
     tags: ["C#","Console"],
-    githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Calculator",
+    githubUrl: "https://github.com/baselabu/Small-projects/tree/main/CurrencyTempConverter",
   },
   {
     name: "Guessing Number Game",
@@ -68,5 +68,11 @@ export const smallProjects = [
     description: "Console application that calculates the area of various geometric shapes with comprehensive input validation.",
     tags: ["C#","Console"],
     githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Shape%20of%20Area",
+  },
+  {
+    name: "Calculator",
+    description: "Simple calculator built during learning process.",
+    tags: ["C#","Console"],
+    githubUrl: "https://github.com/baselabu/Small-projects/tree/main/Calculator",
   },
 ];
