@@ -4,27 +4,47 @@
   overflow: hidden; 
   isolation: isolate; 
   min-height: 100vh; 
-  display: grid; 
-  place-items: center; 
+  display: flex; 
+  align-items: center; 
 }
 
-.hero-copy.center { 
-  text-align: center; 
-  max-width: 820px; 
-  margin: 0 auto; 
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-text { 
+  text-align: left; 
+  max-width: none; 
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .mega-name {
   margin: 0 0 10px;
-  font-size: clamp(44px, 9vw, 92px);
+  font-size: clamp(32px, 7vw, 76px);
   line-height: 0.95;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   filter: drop-shadow(0 6px 24px rgba(0,0,0,0.35));
   animation: hueShift 12s linear infinite;
+  white-space: nowrap;
+  overflow: visible;
 }
 
 .lead { 
@@ -37,7 +57,8 @@
   display: flex; 
   gap: 10px; 
   flex-wrap: wrap; 
-  justify-content: center; 
+  justify-content: flex-start; 
+  margin-top: 2rem;
 }
 
 .scroll-cue { 
@@ -47,6 +68,129 @@
   text-decoration: none; 
   font-size: 22px; 
   animation: bounce 1.6s ease-in-out infinite; 
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Profile Image Styles */
+.image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.image-glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, 
+    rgba(94, 234, 212, 0.3), 
+    rgba(96, 165, 250, 0.3), 
+    rgba(139, 92, 246, 0.3));
+  z-index: -1;
+  filter: blur(20px);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.floating-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent), var(--accent-2));
+  animation: floatDot 3s ease-in-out infinite;
+}
+
+.dot-1 {
+  top: 20%;
+  right: -30px;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  bottom: 30%;
+  left: -40px;
+  animation-delay: 1s;
+  width: 6px;
+  height: 6px;
+}
+
+.dot-3 {
+  top: 60%;
+  right: -20px;
+  animation-delay: 2s;
+  width: 10px;
+  height: 10px;
+}
+
+/* Animations */
+@keyframes floatImage {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(1deg); 
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatDot {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.2);
+    opacity: 1;
+  }
 }
 
 /* Hero background blobs */
@@ -96,7 +240,49 @@
 }
 
 /* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+    order: 2;
+  }
+  
+  .hero-image {
+    order: 1;
+  }
+  
+  .image-container {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 640px) {
-  .mega-name { font-size: clamp(32px, 8vw, 64px); }
-  .hero-cta { flex-direction: column; align-items: center; gap: 8px; }
+  .mega-name { 
+    font-size: clamp(28px, 7vw, 56px);
+    white-space: nowrap;
+  }
+  .hero-cta { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 8px; 
+  }
+  
+  .image-container {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .floating-dot {
+    display: none;
+  }
 }

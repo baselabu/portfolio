@@ -42,6 +42,12 @@ export const experiences = [
 // Main featured projects
 export const projects = [
   {
+    name: "Social Media Platform",
+    description: "A full-stack social media platform built as a group project for DAT220. Features user profiles, posts with images, comments, likes, follow system, and interest groups. Built with Flask backend and SQLite database, showcasing collaborative development and modern web technologies.",
+    tags: ["Python", "Flask", "SQLite", "HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/baselabu/DAT220-Project-media-platform",
+  },
+  {
     name: "Books Library",
     description: "A comprehensive ASP.NET Razor Pages web application for managing a book library with CRUD operations, user authentication, and modern web interface.",
     tags: ["ASP.NET Core", "Razor Pages", "C#", "Entity Framework Core","SQLite", "HTML", "CSS", "JavaScript"],
