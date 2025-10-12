@@ -45,7 +45,7 @@ portfolio/
 │   ├── 📄 education.js        # Education timeline rendering
 │   └── 📄 animations.js       # Scroll animations
 └── 📁 documents/              # Documents and PDFs
-    └── 📄 Basel Work CV.pdf   # Resume/CV
+    └── 📄 Basel_Work_NoNum.pdf   # Resume/CV
 ```
 
 ## 🛠️ Technologies Used
@@ -199,7 +199,7 @@ export const experiences = [
 ```
 
 ### Updating CV
-Replace `documents/Basel Work CV.pdf` with your updated CV.
+Replace `documents/Basel_Work_NoNum.pdf` with your updated CV.
 
 ## 🌐 Browser Support
 
