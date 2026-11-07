@@ -25,7 +25,7 @@ export const no = {
   "now.title": "Nå",
   "now.study": "Første semester på master: etisk hacking, nettverkssikkerhet, nettskyteknologier og trådløs kommunikasjon.",
   "now.ta": "Studentassistent i DAT120/DAT125 Grunnleggende programmering.",
-  "now.build": "Bygger Kolumbus Delay Radar, en skytjeneste for forsinkelser i bussene i Rogaland.",
+  "now.build": "Ferdig med Kolumbus Delay Radar: sanntids punktlighet for bussene i Rogaland, kjørt på Azure Kubernetes Service.",
   "now.open": "Åpen for sommerjobb og internship sommeren 2027.",
   "thesis.title": "Bacheloroppgave",
   "thesis.meta": "ABB Bryne, jan–mai 2026. Gruppe på tre, veileder Morten Mossige. Karakter A.",
@@ -58,6 +58,17 @@ export const no = {
 
 export const projects = [
   {
+    title: "Kolumbus Delay Radar",
+    year: "2026",
+    context: { en: "DAT515 Cloud Computing, solo project", no: "DAT515 Nettskyteknologier, individuelt prosjekt" },
+    desc: {
+      en: "A cloud service that collects real-time data for every Kolumbus bus in Rogaland from Entur every 30 seconds, and answers which buses are late right now, how punctual each line is and when stops are at their worst. A C# collector and an ASP.NET Core API run on Azure Kubernetes Service, built entirely as code (Bicep, Kustomize, Helm) with HTTPS, nightly backups, monitoring and a default-deny network. It collected 1.8 million stop events in two weeks.",
+      no: "En skytjeneste som henter sanntidsdata for alle Kolumbus-busser i Rogaland fra Entur hvert 30. sekund, og svarer på hvilke busser som er forsinket nå, hvor punktlig hver linje er og når stoppene er verst. En innsamler i C# og et API i ASP.NET Core kjører på Azure Kubernetes Service, bygget helt som kode (Bicep, Kustomize, Helm) med HTTPS, nattlig backup, overvåking og et nettverk som er stengt som standard. Den samlet 1,8 millioner stopphendelser på to uker.",
+    },
+    stack: "C#, .NET 10, ASP.NET Core, PostgreSQL, Azure (AKS, Bicep), Kubernetes, Helm, Prometheus, Grafana, GitHub Actions",
+    links: [{ en: "Case study (PDF)", no: "Case-studie (PDF)", url: "documents/Kolumbus-Delay-Radar-case-study.pdf" }],
+  },
+  {
     title: "TA Queue",
     year: "2026",
     context: { en: "Personal project, used in UiS lab sessions", no: "Eget prosjekt, brukt i øvingstimer på UiS" },
@@ -70,17 +81,6 @@ export const projects = [
       { en: "Live site", no: "Live side", url: "https://uis-ta-queue.onrender.com" },
       { en: "Source", no: "Kildekode", url: "https://github.com/baselabu/uis-ta-queue" },
     ],
-  },
-  {
-    title: "Kolumbus Delay Radar",
-    year: "2026",
-    status: { en: "In progress", no: "Pågår" },
-    context: { en: "DAT515 Cloud Computing, group project", no: "DAT515 Nettskyteknologier, gruppeprosjekt" },
-    desc: {
-      en: "A cloud service that collects real-time data for every Kolumbus bus in Rogaland from Entur's open SIRI feed, stores planned against actual arrivals, and answers which lines and stops are least punctual. A stateful collector and a stateless, scalable API run as separate workloads on Kubernetes.",
-      no: "En skytjeneste som henter sanntidsdata for alle Kolumbus-busser i Rogaland fra Enturs åpne SIRI-strøm, lagrer planlagt mot faktisk ankomst, og svarer på hvilke linjer og stopp som er minst punktlige. En tilstandsfull innsamler og et tilstandsløst, skalerbart API kjører som separate tjenester i Kubernetes.",
-    },
-    stack: "Kubernetes, Docker, PostgreSQL, Prometheus, Grafana, GitHub Actions",
   },
   {
     title: "FinanceTracker",
